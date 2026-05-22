@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop - Agenda de Atendimentos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <div>
+            <p class="rotulo">Sistema de atendimento</p>
+            <h1>Pet Shop Bom Pra Gatorro</h1>
+        </div>
+        <span class="selo">Aula-Demo</span>
+    </header>
+
+    <main class="grade-principal">
+        <section class="painel formulario">
+            <h2>Novo atendimento</h2>
+            <form id="formAtendimento">
+                <label for="tutor">Nome do tutor</label>
+                <input type="text" id="tutor" placeholder="Ex.: Dalton Junior">
+
+                <label for="pet">Nome do pet</label>
+                <input type="text" id="pet" placeholder="Ex.: Amora">
+
+                <div class="duas-colunas">
+                    <div>
+                        <label for="especie">Especie</label>
+                        <select id="especie">
+                            <option value="cachorro">Cachorro</option>
+                            <option value="gato">Gato</option>
+                            <option value="ave">Ave</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="peso">Peso em kg</label>
+                        <input type="number" id="peso" min="0" step="0.1" placeholder="8.5">
+                    </div>
+                </div>
+
+                <div class="duas-colunas">
+                    <div>
+                        <label for="servico">Servico</label>
+                        <select id="servico">
+                            <option value="banho">Banho</option>
+                            <option value="tosa">Tosa</option>
+                            <option value="vacina">Vacina</option>
+                            <option value="consulta">Consulta</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="data">Data</label>
+                        <input type="date" id="data">
+                    </div>
+                </div>
+
+                <label for="observacao">Observacao</label>
+                <textarea id="observacao" rows="3" placeholder="Alergias, comportamento, restricoes..."></textarea>
+
+                <div class="acoes-formulario">
+                    <button type="submit">Cadastrar</button>
+                    <button type="reset" class="botao-secundario">Limpar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="area-conteudo">
+            <div class="indicadores">
+                <div class="indicador">
+                    <span>Total</span>
+                    <strong id="totalAtendimentos">0</strong>
+                </div>
+                <div class="indicador">
+                    <span>Pendentes</span>
+                    <strong id="totalPendentes">0</strong>
+                </div>
+                <div class="indicador">
+                    <span>Valor previsto</span>
+                    <strong id="valorPrevisto">R$ 0,00</strong>
+                </div>
+            </div>
+
+            <section class="painel">
+                <div class="cabecalho-lista">
+                    <h2>Atendimentos</h2>
+                    <div class="filtros">
+                        <input type="search" id="buscaAtendimento" placeholder="Buscar pet ou tutor">
+                        <select id="filtroStatus">
+                            <option value="todos">Todos</option>
+                            <option value="pendente">Pendentes</option>
+                            <option value="concluido">Concluidos</option>
+                            <option value="cancelado">Cancelados</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="listaAtendimentos" class="lista"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="framework.js"></script>
+    <script src="js/app.js"></script>
+    <script src="teste.js"></script>
+
+</body>
+</html>
